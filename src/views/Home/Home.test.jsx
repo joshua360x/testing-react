@@ -1,3 +1,6 @@
+import { render, screen } from "@testing-library/react"
+import Profile from "../../components/Profile/Profile"
+import Home from "./Home"
 
 const user = {
   id: 1,
@@ -11,5 +14,11 @@ const user = {
 }
 
 test('Should render the user profile', () => {
+
+
+// render(<Profile user='joe' />)
+
+// screen.debug()
+
 
 })
