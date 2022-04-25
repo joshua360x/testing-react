@@ -1,4 +1,5 @@
-import { render, screen } from "@testing-library/react"
+import { getByRole, render, screen } from "@testing-library/react"
+import App from "../../App"
 import Profile from "../../components/Profile/Profile"
 import Home from "./Home"
 
@@ -16,9 +17,14 @@ const user = {
 test('Should render the user profile', () => {
 
 
-// render(<Profile user='joe' />)
+render(<Home user={user} />)
+
+const name = screen.getByRole('heading', { level: 1 })
+const motto = screen.
 
 // screen.debug()
 
-
+return (
+  expect(name).toBeInTheDocument()
+)
 })
