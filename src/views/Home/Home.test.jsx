@@ -1,3 +1,7 @@
+import { getByRole, render, screen } from "@testing-library/react"
+import App from "../../App"
+import Profile from "../../components/Profile/Profile"
+import Home from "./Home"
 
 const user = {
   id: 1,
@@ -10,6 +14,26 @@ const user = {
   color: 'crimson',
 }
 
-test('Should render the user profile', () => {
+test('Should render the user profile', async () => {
 
+
+render(<Home user={user} />)
+
+const name = screen.getByRole('heading', { level: 1 })
+const motto = screen.getByLabelText('motto')
+const interestHeading = screen.getByRole('heading', { level: 2 })
+const avatar = screen.getByAltText('avatar')
+const headerIMG = screen.getByAltText('header')
+const likeOfUser = screen.getByRole('list')
+
+// screen.debug()
+
+return (
+  expect(name).toBeInTheDocument(),
+  expect(motto).toBeInTheDocument(),
+  expect(interestHeading).toBeInTheDocument(),
+  expect(avatar).toBeInTheDocument(),
+  expect(headerIMG).toBeInTheDocument(),
+  expect(likeOfUser).toBeInTheDocument()
+)
 })
