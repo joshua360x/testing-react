@@ -23,6 +23,8 @@ const name = screen.getByRole('heading', { level: 1 })
 const motto = screen.getByLabelText('motto')
 const interestHeading = screen.getByRole('heading', { level: 2 })
 const avatar = screen.getByAltText('avatar')
+const headerIMG = screen.getByAltText('header')
+const likeOfUser = screen.getByRole('list')
 
 // screen.debug()
 
@@ -30,6 +32,8 @@ return (
   expect(name).toBeInTheDocument(),
   expect(motto).toBeInTheDocument(),
   expect(interestHeading).toBeInTheDocument(),
-  expect(avatar).toBeInTheDocument()
+  expect(avatar).toBeInTheDocument(),
+  expect(headerIMG).toBeInTheDocument(),
+  expect(likeOfUser).toBeInTheDocument()
 )
 })
